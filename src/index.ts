@@ -86,6 +86,7 @@ try {
     const labels = card.labels
       .map(l => options.labels[l.name])
       .concat(options.lists[list.name] || [])
+      .filter(l => l)
       .map(l => ({ name: l }));
 
     const issue = {
