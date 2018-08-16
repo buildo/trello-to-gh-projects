@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "commonjs",
+    "declaration": false,
+    "allowSyntheticDefaultImports": false,
+    "allowJs": false,
+    "experimentalDecorators": true,
+    "outDir": "./lib",
+    "baseUrl": ".",
+    "noImplicitAny": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strictNullChecks": true,
+    "sourceMap": false,
+    "alwaysStrict": true,
+    "lib": [
+      "es6"
+    ]
+  },
+  "include": [
+    "src/**/*",
+    "typings"
+  ]
+}
