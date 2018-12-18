@@ -49,6 +49,12 @@ const handleErrors = (errors: any) => {
   throw new Error(failure(errors).join("\n"));
 };
 
+type NewIssue = {
+  title: string;
+  body: string;
+  labels: Array<{ name: string }>
+};
+
 try {
   const args = Args.decode(minimist(process.argv.slice(2))).getOrElseL(
     handleErrors
@@ -89,9 +95,9 @@ try {
       .filter(l => l)
       .map(l => ({ name: l }));
 
-    const issue = {
+    const issue: NewIssue = {
       title: card.name,
-      description: `${card.desc}${
+      body: `${card.desc || ""}${
         attachments.length > 0 ? `\n\n##attachments\n${attachments}` : ""
       }`,
       labels
