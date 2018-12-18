@@ -99,7 +99,7 @@ try {
       title: card.name,
       body: `${card.desc || ""}${
         attachments.length > 0 ? `\n\n##attachments\n${attachments}` : ""
-      }`,
+      }\n\n##original Trello card\n${card.shortUrl}`,
       labels
     };
 
